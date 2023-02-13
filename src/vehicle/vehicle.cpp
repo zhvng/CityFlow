@@ -452,6 +452,8 @@ namespace CityFlow {
             route += r->getId() + " ";
         }
         info["route"] = route;
+        info["time"] = std::to_string(engine->getCurrentTime() - getEnterTime());
+        info["onLastRoad"] = controllerInfo.router.onLastRoad() ? "True" : "False";
 
         return info;
     }
